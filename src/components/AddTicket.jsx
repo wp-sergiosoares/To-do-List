@@ -11,19 +11,18 @@ export default function AddTicket({ onAdd }) {
   };
 
   return (
-    <div className="px-4">
+    <div>
       <form
         onSubmit={handleSubmit}
         className="flex gap-2 items-center justify-between"
       >
         <input
           type="text"
-          placeholder="Digite um item"
+          placeholder="Adicione uma tarefa..."
           value={item}
           onChange={(e) => setItem(e.target.value)}
-          className="border-1 border-gray-500 p-2 flex-1 bg-white"
+          className="outline-2 outline-[var(--color-secondary)] py-2 px-4 flex-1 bg-white rounded-full"
         />
-        <button className="bg-blue-500 text-white w-40 p-2">Adicionar</button>
       </form>
     </div>
   );

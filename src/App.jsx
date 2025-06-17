@@ -1,7 +1,7 @@
 import "./App.css";
 import AddTicket from "./components/AddTicket";
 
-import { ShoppingBasket } from "lucide-react";
+import { ListTodo } from "lucide-react";
 import TicketList from "./components/TicketList";
 
 import { useEffect, useState } from "react";
@@ -49,18 +49,22 @@ function App() {
 
   return (
     <>
-      <div className="max-w-xl mx-auto bg-gray-200 my-10 space-y-2 pb-2">
-        <div className="p-4 flex gap-4 items-center bg-gray-400">
-          <ShoppingBasket size={32} />
-          <h1 className="text-xl">Lista de Compras Interativa</h1>
+      <div className="max-w-xl mx-auto bg-gray-200 my-10 pb-2 shadow-xl rounded-b-lg">
+        <div className="rounded-t-lg p-4 flex gap-2 items-center bg-[var(--color-primary)] justify-center">
+          <ListTodo size={28} className=" text-[var(--color-secondary)]" />
+          <h1 className="text-xl text-[var(--color-secondary)] font-mono font-bold">
+            Lista de Tarefas
+          </h1>
         </div>
-        <AddTicket onAdd={addItem} />
-        <TicketList
-          items={itensFiltrados}
-          onRemove={removeItem}
-          onToggle={marcaConcluido}
-        />
-        <Filters setFiltro={setFiltro} />
+        <div className="p-6 space-y-4">
+          <AddTicket onAdd={addItem} />
+          <TicketList
+            items={itensFiltrados}
+            onRemove={removeItem}
+            onToggle={marcaConcluido}
+          />
+          <Filters setFiltro={setFiltro} />
+        </div>
       </div>
     </>
   );

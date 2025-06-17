@@ -1,11 +1,10 @@
 export default function Filters({ setFiltro }) {
   return (
-    <div className="px-4">
+    <div>
       <div className="flex gap-2 items-center">
-        <div className="text-sm">Filtros: </div>
         <div>
           <button
-            className="rounded-full bg-gray-400 px-2 py-1 text-sm cursor-pointer"
+            className="rounded-full text-white px-2 py-1 text-sm cursor-pointer bg-[var(--color-primary)]"
             onClick={() => setFiltro("todos")}
           >
             Todos
@@ -13,7 +12,7 @@ export default function Filters({ setFiltro }) {
         </div>
         <div>
           <button
-            className="rounded-full bg-gray-400 px-2 py-1 text-sm cursor-pointer"
+            className="rounded-full text-white px-2 py-1 text-sm cursor-pointer bg-[var(--color-primary)]"
             onClick={() => setFiltro("comprados")}
           >
             Comprados
@@ -22,7 +21,7 @@ export default function Filters({ setFiltro }) {
         <div>
           <button
             onClick={() => setFiltro("pendentes")}
-            className="rounded-full bg-gray-400 px-2 py-1 text-sm cursor-pointer"
+            className="rounded-full text-white px-2 py-1 text-sm cursor-pointer bg-[var(--color-primary)]"
           >
             Pendentes
           </button>

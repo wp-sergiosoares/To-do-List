@@ -1,19 +1,21 @@
+import { Trash2 } from "lucide-react";
+
 export default function TicketList({ items, onRemove, onToggle }) {
   console.log(items);
   return (
-    <div className="px-4">
+    <div>
       {items.length > 0 && (
-        <ul className="space-y-1">
+        <ul className="space-y-2">
           {items.map((item) => (
             <div
               key={item.id}
-              className="flex gap-2 items-center justify-between"
+              className="flex gap-2 items-center justify-between bg-white rounded-full py-2 px-4 "
             >
               <div
                 className={
                   item.bought
-                    ? "line-through decoration-1 text-gray-400 flex-1 p-2"
-                    : "flex-1 p-2 hover:line-through cursor-pointer hover:text-gray-400"
+                    ? "cursor-pointer line-through decoration-1 text-[var(--color-text-secondary)] text-lg"
+                    : "hover:line-through cursor-pointer hover:text-[var(--color-text-secondary)] text-lg text-[var(--color-text-primary)]"
                 }
                 onClick={() => onToggle(item.id)}
               >
@@ -22,9 +24,9 @@ export default function TicketList({ items, onRemove, onToggle }) {
               <div>
                 <button
                   onClick={() => onRemove(item.id)}
-                  className="p-2 text-red-500 cursor-pointer"
+                  className="text-[var(--color-danger)] cursor-pointer"
                 >
-                  remover
+                  <Trash2 size={22} />
                 </button>
               </div>
             </div>
