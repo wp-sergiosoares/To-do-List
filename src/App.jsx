@@ -3,10 +3,19 @@ import AddTicket from "./components/AddTicket";
 
 import { ShoppingBasket } from "lucide-react";
 import TicketList from "./components/TicketList";
+
 import { useState } from "react";
+import Filters from "./components/Filters";
 
 function App() {
   const [items, setItems] = useState([]);
+  const [filtro, setFiltro] = useState("todos");
+
+  const itensFiltrados = items.filter((item) => {
+    if (filtro === "todos") return true; // mostra tudo
+    if (filtro === "comprados") return item.bought;
+    if (filtro === "pendentes") return !item.bought;
+  });
 
   const addItem = (item) => {
     const newItem = {
@@ -23,24 +32,11 @@ function App() {
   };
 
   const marcaConcluido = (id) => {
-    // 1. Criar um novo array baseado no atual
-    const novosItens = items.map((itemAtual) => {
-      // 2. Verificar se o item atual é o que queremos alterar
-      if (itemAtual.id === id) {
-        // 3. Se for, criar uma nova versão do item, com o campo 'bought' invertido
-        const itemAtualizado = {
-          ...itemAtual, // Copia todas as propriedades do item atual
-          bought: !itemAtual.bought, // Inverte o valor atual de 'bought'
-        };
-        return itemAtualizado;
-      } else {
-        // 4. Se não for o item clicado, mantemos ele como está
-        return itemAtual;
-      }
-    });
-
-    // 5. Atualizar o estado com o novo array
-    setItems(novosItens);
+    setItems(
+      items.map((item) =>
+        item.id === id ? { ...item, bought: !item.bought } : item
+      )
+    );
   };
 
   // setItems(items.map(item => item.id === id ? { ...item, bought: !item.bought } : item));
@@ -54,10 +50,11 @@ function App() {
         </div>
         <AddTicket onAdd={addItem} />
         <TicketList
-          items={items}
+          items={itensFiltrados}
           onRemove={removeItem}
           onToggle={marcaConcluido}
         />
+        <Filters setFiltro={setFiltro} />
       </div>
     </>
   );
