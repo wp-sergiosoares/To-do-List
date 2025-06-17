@@ -4,12 +4,20 @@ import AddTicket from "./components/AddTicket";
 import { ShoppingBasket } from "lucide-react";
 import TicketList from "./components/TicketList";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Filters from "./components/Filters";
 
 function App() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(() => {
+    const saved = localStorage.getItem("items");
+    return saved ? JSON.parse(saved) : [];
+  });
   const [filtro, setFiltro] = useState("todos");
+
+  // Atualiza o localStorage sempre que 'todos' mudar
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(items));
+  }, [items]);
 
   const itensFiltrados = items.filter((item) => {
     if (filtro === "todos") return true; // mostra tudo
@@ -38,8 +46,6 @@ function App() {
       )
     );
   };
-
-  // setItems(items.map(item => item.id === id ? { ...item, bought: !item.bought } : item));
 
   return (
     <>
