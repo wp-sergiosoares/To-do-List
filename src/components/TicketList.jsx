@@ -13,7 +13,7 @@ export default function TicketList({ items, onRemove, onToggle }) {
                 className={
                   item.bought
                     ? "line-through decoration-1 text-gray-400 flex-1 p-2"
-                    : "flex-1 p-2"
+                    : "flex-1 p-2 hover:line-through cursor-pointer hover:text-gray-400"
                 }
                 onClick={() => onToggle(item.id)}
               >
