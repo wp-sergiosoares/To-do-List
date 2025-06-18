@@ -21,7 +21,7 @@ export default function TicketList({ items, onRemove, onToggle }) {
               >
                 {item.item}
               </div>
-              <div>
+              <div className="flex items-center justify-center">
                 <button
                   onClick={() => onRemove(item.id)}
                   className="text-[var(--color-danger)] cursor-pointer"
