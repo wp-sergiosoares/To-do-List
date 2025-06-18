@@ -9,12 +9,12 @@ export default function TicketList({ items, onRemove, onToggle }) {
           {items.map((item) => (
             <div
               key={item.id}
-              className="flex gap-2 items-center justify-between bg-white rounded-full py-2 px-4 "
+              className="border-1 border-gray-300 flex gap-2 items-center justify-between bg-white rounded-full py-2 px-4 "
             >
               <div
                 className={
                   item.bought
-                    ? "cursor-pointer line-through decoration-1 text-[var(--color-text-secondary)] text-lg"
+                    ? " cursor-pointer line-through decoration-1 text-[var(--color-text-secondary)] text-lg"
                     : "hover:line-through cursor-pointer hover:text-[var(--color-text-secondary)] text-lg text-[var(--color-text-primary)]"
                 }
                 onClick={() => onToggle(item.id)}
