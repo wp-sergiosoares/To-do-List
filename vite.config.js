@@ -4,6 +4,6 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "https://wp-sergiosoares.github.io/Lista-de-Compras-Interativa/",
+  base: "https://wp-sergiosoares.github.io/To-do-List/",
   plugins: [react(), tailwindcss()],
 });

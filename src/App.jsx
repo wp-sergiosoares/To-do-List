@@ -1,10 +1,9 @@
 import "./App.css";
-import AddTicket from "./components/AddTicket";
-
-import { ListTodo } from "lucide-react";
-import TicketList from "./components/TicketList";
-
 import { useEffect, useState } from "react";
+import { ListTodo } from "lucide-react";
+
+import AddTicket from "./components/AddTicket";
+import TicketList from "./components/TicketList";
 import Filters from "./components/Filters";
 
 function App() {
