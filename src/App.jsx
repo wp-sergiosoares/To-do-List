@@ -49,21 +49,23 @@ function App() {
 
   return (
     <>
-      <div className="max-w-xl mx-auto bg-gray-200 my-10 pb-2 shadow-xl rounded-b-lg">
-        <div className="rounded-t-lg p-4 flex gap-2 items-center bg-[var(--color-primary)] justify-center">
-          <ListTodo size={28} className=" text-[var(--color-secondary)]" />
-          <h1 className="text-xl text-[var(--color-secondary)] font-mono font-bold">
-            Lista de Tarefas
-          </h1>
-        </div>
-        <div className="p-6 space-y-4">
-          <AddTicket onAdd={addItem} />
-          <TicketList
-            items={itensFiltrados}
-            onRemove={removeItem}
-            onToggle={marcaConcluido}
-          />
-          <Filters setFiltro={setFiltro} />
+      <div className="max-w-xl mx-auto">
+        <div className="mx-4 bg-gray-200 my-10 pb-2 shadow-xl rounded-b-lg">
+          <div className="rounded-t-lg p-4 flex gap-2 items-center bg-[var(--color-primary)] justify-center">
+            <ListTodo size={28} className=" text-[var(--color-secondary)]" />
+            <h1 className="text-xl text-[var(--color-secondary)] font-mono font-bold">
+              Lista de Tarefas
+            </h1>
+          </div>
+          <div className="p-6 space-y-4">
+            <AddTicket onAdd={addItem} />
+            <TicketList
+              items={itensFiltrados}
+              onRemove={removeItem}
+              onToggle={marcaConcluido}
+            />
+            <Filters setFiltro={setFiltro} />
+          </div>
         </div>
       </div>
     </>
