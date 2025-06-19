@@ -1,10 +1,10 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import { ClockFading } from "lucide-react";
 
 import AddTicket from "./components/AddTicket";
 import TicketList from "./components/TicketList";
 import Filters from "./components/Filters";
+import Header from "./components/Header";
 
 function App() {
   const [items, setItems] = useState(() => {
@@ -50,12 +50,7 @@ function App() {
     <>
       <div className="relative min-h-screen flex items-center justify-center">
         <div className="container max-w-2xl mx-auto w-full">
-          <div className="flex gap-2 items-center justify-center">
-            <h1 className="text-lg text-[var(--color-primary)] font-mono font-bold">
-              Lista de Tarefas
-            </h1>
-            <ClockFading size={28} className=" text-[var(--color-primary)]" />
-          </div>
+          <Header />
 
           <div className="space-y-4 p-4">
             <AddTicket onAdd={addItem} />
