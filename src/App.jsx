@@ -56,7 +56,7 @@ function App() {
                 size={28}
                 className=" text-[var(--color-secondary)]"
               />
-              <h1 className="text-xl text-[var(--color-secondary)] font-mono font-bold">
+              <h1 className="text-xl text-white font-mono font-bold">
                 Lista de Tarefas
               </h1>
             </div>
@@ -70,6 +70,16 @@ function App() {
                 filtro={filtro}
               />
             </div>
+          </div>
+          <div className="text-center italic text-gray-500 text-sm">
+            Desenvolvido por{" "}
+            <a
+              href="https://portfolio-two-peach-25.vercel.app/"
+              target="_blank"
+              className="underline hover:text-black"
+            >
+              Sérgio Soares
+            </a>
           </div>
         </div>
       </div>
