@@ -1,6 +1,14 @@
 import { Clock12, Check } from "lucide-react";
 
-export default function ContagemTarefas({ nrConcluidas, nrPendentes }) {
+type ContagemTarefasProps = {
+  nrConcluidas: number,
+  nrPendentes: number,
+};
+
+export default function ContagemTarefas({
+  nrConcluidas,
+  nrPendentes,
+}: ContagemTarefasProps) {
   return (
     <>
       {nrConcluidas || nrPendentes ? (

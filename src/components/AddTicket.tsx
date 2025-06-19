@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
-export default function AddTicket({ onAdd }) {
+
+type AddTicketProps = {
+  onAdd: (item: string) => void;
+};
+
+export default function AddTicket({ onAdd }: AddTicketProps) {
   const [item, setItem] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (item.trim() === "") return;
     onAdd(item.trim());

@@ -1,4 +1,8 @@
-export default function Filters({ setFiltro }) {
+type FiltersProps = {
+  setFiltro: (filtro: "todos" | "concluidos" | "pendentes") => void;
+};
+
+export default function Filters({ setFiltro }: FiltersProps) {
   return (
     <div>
       <div className="flex gap-2 items-center justify-center">

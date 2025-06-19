@@ -1,6 +1,24 @@
 import { Trash2 } from "lucide-react";
 
-export default function TicketList({ items, onRemove, onToggle, filtro }) {
+type Item = {
+  id: string | number,
+  item: string,
+  bought: boolean,
+};
+
+type TicketListProps = {
+  items: Item[],
+  onRemove: (id: string | number) => void,
+  onToggle: (id: string | number) => void,
+  filtro: "todos" | "concluidos" | "ativos",
+};
+
+export default function TicketList({
+  items,
+  onRemove,
+  onToggle,
+  filtro,
+}: TicketListProps) {
   console.log(items);
   return (
     <div>
