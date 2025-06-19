@@ -5,11 +5,11 @@ export default function TicketList({ items, onRemove, onToggle, filtro }) {
   return (
     <div>
       {items.length > 0 ? (
-        <ul className="space-y-[1px]">
+        <ul className="space-y-2">
           {items.map((item) => (
             <div
               key={item.id}
-              className="border-1 border-gray-300 flex gap-2 items-center justify-between bg-white rounded-lg py-2 px-4"
+              className="border-1 border-gray-200 flex gap-2 items-center justify-between bg-white rounded-lg py-3 px-4 shadow-xs"
             >
               <div
                 className={

@@ -4,7 +4,7 @@ export default function Filters({ setFiltro }) {
       <div className="flex gap-2 items-center justify-center">
         <div>
           <button
-            className="rounded-full text-[var(--color-text-secondary)] px-2 py-1 text-sm cursor-pointer bg-gray-100 hover:bg-gray-300 transition"
+            className="rounded-full text-white px-2 py-1 text-sm cursor-pointer bg-[var(--color-secondary)] hover:bg-[var(--color-secondary-light)] transition"
             onClick={() => setFiltro("todos")}
           >
             Todos
@@ -12,7 +12,7 @@ export default function Filters({ setFiltro }) {
         </div>
         <div>
           <button
-            className="rounded-full text-[var(--color-text-secondary)] px-2 py-1 text-sm cursor-pointer bg-gray-100 hover:bg-gray-300 transition"
+            className="rounded-full text-white px-2 py-1 text-sm cursor-pointer bg-[var(--color-secondary)] hover:bg-[var(--color-secondary-light)] transition"
             onClick={() => setFiltro("concluidos")}
           >
             Concluídos
@@ -21,7 +21,7 @@ export default function Filters({ setFiltro }) {
         <div>
           <button
             onClick={() => setFiltro("pendentes")}
-            className="rounded-full text-[var(--color-text-secondary)] px-2 py-1 text-sm cursor-pointer bg-gray-100 hover:bg-gray-300 transition"
+            className="rounded-full text-white px-2 py-1 text-sm cursor-pointer bg-[var(--color-secondary)] hover:bg-[var(--color-secondary-light)] transition"
           >
             Pendentes
           </button>

@@ -50,21 +50,19 @@ function App() {
     <>
       <div className="relative min-h-screen flex items-center justify-center">
         <div className="container max-w-2xl mx-auto w-full">
+          <div className="flex gap-2 items-center justify-center">
+            <h1 className="text-lg text-[var(--color-primary)] font-mono font-bold">
+              Lista de Tarefas
+            </h1>
+            <ClockFading size={28} className=" text-[var(--color-primary)]" />
+          </div>
+
           <div className="space-y-4 p-4">
             <AddTicket onAdd={addItem} />
             <Filters setFiltro={setFiltro} />
           </div>
 
-          <div className="mx-4 bg-gray-200 my-5 shadow-xl rounded-b-lg">
-            <div className="rounded-t-lg py-4 px-6 flex gap-2 items-center justify-between bg-[var(--color-primary)]">
-              <h1 className="text-xl text-white font-mono font-bold">
-                Lista de Tarefas
-              </h1>
-              <ClockFading
-                size={28}
-                className=" text-[var(--color-secondary)]"
-              />
-            </div>
+          <div className="my-5 rounded-b-lg">
             <div className="p-4 space-y-4">
               <TicketList
                 items={itensFiltrados}
