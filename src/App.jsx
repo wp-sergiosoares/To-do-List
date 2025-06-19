@@ -63,6 +63,7 @@ function App() {
             <div className="p-6 space-y-4">
               <AddTicket onAdd={addItem} />
               <Filters setFiltro={setFiltro} />
+
               <TicketList
                 items={itensFiltrados}
                 onRemove={removeItem}
