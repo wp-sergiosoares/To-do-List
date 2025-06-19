@@ -5,11 +5,11 @@ export default function TicketList({ items, onRemove, onToggle, filtro }) {
   return (
     <div>
       {items.length > 0 ? (
-        <ul className="space-y-2">
+        <ul className="space-y-[1px]">
           {items.map((item) => (
             <div
               key={item.id}
-              className="border-1 border-gray-300 flex gap-2 items-center justify-between bg-white rounded-full py-2 px-4 "
+              className="border-1 border-gray-300 flex gap-2 items-center justify-between bg-white rounded-lg py-2 px-4"
             >
               <div
                 className={
@@ -33,7 +33,7 @@ export default function TicketList({ items, onRemove, onToggle, filtro }) {
           ))}
         </ul>
       ) : (
-        <p className="text-lg text-gray-500 italic">
+        <p className="text-lg text-gray-500 italic text-center">
           {filtro === "concluidos"
             ? "Sem tarefas concluídas"
             : filtro === "ativos"

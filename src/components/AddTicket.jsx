@@ -22,9 +22,9 @@ export default function AddTicket({ onAdd }) {
             placeholder="Adicione uma tarefa..."
             value={item}
             onChange={(e) => setItem(e.target.value)}
-            className="outline-2 outline-[var(--color-secondary)] py-3 px-4 flex-1 bg-white rounded-full"
+            className="outline-2 outline-[var(--color-secondary)] py-3 px-4 flex-1 rounded-full bg-white"
           />
-          <button className="absolute right-[2px] bg-[var(--color-secondary)] text-white py-3 px-4 rounded-full hover:bg-[var(--color-primary-hover)] cursor-pointer text-sm tracking-wider transition">
+          <button className="absolute right-[2px] bg-[var(--color-secondary)] text-white py-3 px-4 rounded-full hover:bg-[var(--color-secondary-light)] cursor-pointer text-sm tracking-wider transition">
             Adicionar
           </button>
         </div>
