@@ -14,8 +14,8 @@ export default function TicketList({ items, onRemove, onToggle, filtro }) {
               <div
                 className={
                   item.bought
-                    ? " cursor-pointer line-through decoration-1 text-[var(--color-text-secondary)] text-lg"
-                    : "hover:line-through cursor-pointer hover:text-[var(--color-text-secondary)] text-lg text-[var(--color-text-primary)]"
+                    ? "flex-1 cursor-pointer line-through decoration-1 text-[var(--color-text-secondary)] text-lg"
+                    : "flex-1 hover:line-through cursor-pointer hover:text-[var(--color-text-secondary)] text-lg text-[var(--color-text-primary)]"
                 }
                 onClick={() => onToggle(item.id)}
               >

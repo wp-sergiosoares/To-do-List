@@ -7,7 +7,7 @@ export default function Filters({ setFiltro }) {
             className="tracking-wider rounded-full text-white px-2 py-1 text-sm cursor-pointer bg-[var(--color-secondary)] hover:bg-[var(--color-secondary-light)] transition"
             onClick={() => setFiltro("todos")}
           >
-            Todos
+            Todas
           </button>
         </div>
         <div>
@@ -15,7 +15,7 @@ export default function Filters({ setFiltro }) {
             className="tracking-wider  rounded-full text-white px-2 py-1 text-sm cursor-pointer bg-[var(--color-secondary)] hover:bg-[var(--color-secondary-light)] transition"
             onClick={() => setFiltro("concluidos")}
           >
-            Concluídos
+            Concluídas
           </button>
         </div>
         <div>

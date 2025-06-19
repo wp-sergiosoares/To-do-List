@@ -5,17 +5,29 @@ import AddTicket from "./components/AddTicket";
 import TicketList from "./components/TicketList";
 import Filters from "./components/Filters";
 import Header from "./components/Header";
+import ContagemTarefas from "./components/ContagemTarefas";
+
+// id, item, bought
 
 function App() {
   const [items, setItems] = useState(() => {
     const saved = localStorage.getItem("items");
     return saved ? JSON.parse(saved) : [];
   });
+  const [nrConcluidas, setNrConcluidas] = useState("");
+  const [nrPendentes, setNrPendentes] = useState("");
   const [filtro, setFiltro] = useState("todos");
+
+  console.log(items);
 
   // Atualiza o localStorage sempre que 'todos' mudar
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(items));
+
+    const filtraConcluidas = items.filter((item) => item.bought);
+    setNrConcluidas(filtraConcluidas.length);
+    const filtraPendentes = items.filter((item) => !item.bought);
+    setNrPendentes(filtraPendentes.length);
   }, [items]);
 
   const itensFiltrados = items.filter((item) => {
@@ -48,7 +60,7 @@ function App() {
 
   return (
     <>
-      <div className="relative min-h-screen flex items-center justify-center">
+      <div className="mt-10">
         <div className="container max-w-2xl mx-auto w-full">
           <Header />
 
@@ -57,7 +69,7 @@ function App() {
             <Filters setFiltro={setFiltro} />
           </div>
 
-          <div className="my-5 rounded-b-lg">
+          <div className="mt-5">
             <div className="p-4 space-y-4">
               <TicketList
                 items={itensFiltrados}
@@ -67,6 +79,10 @@ function App() {
               />
             </div>
           </div>
+          <ContagemTarefas
+            nrConcluidas={nrConcluidas}
+            nrPendentes={nrPendentes}
+          />
           <div className="text-center italic text-gray-500 text-sm">
             Desenvolvido por{" "}
             <a
