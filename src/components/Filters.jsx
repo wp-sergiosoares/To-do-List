@@ -13,7 +13,7 @@ export default function Filters({ setFiltro }) {
         <div>
           <button
             className="rounded-full text-white px-2 py-1 text-sm cursor-pointer bg-[var(--color-primary)]"
-            onClick={() => setFiltro("comprados")}
+            onClick={() => setFiltro("concluidos")}
           >
             Concluídos
           </button>

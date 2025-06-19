@@ -1,10 +1,10 @@
 import { Trash2 } from "lucide-react";
 
-export default function TicketList({ items, onRemove, onToggle }) {
+export default function TicketList({ items, onRemove, onToggle, filtro }) {
   console.log(items);
   return (
     <div>
-      {items.length > 0 && (
+      {items.length > 0 ? (
         <ul className="space-y-2">
           {items.map((item) => (
             <div
@@ -32,6 +32,14 @@ export default function TicketList({ items, onRemove, onToggle }) {
             </div>
           ))}
         </ul>
+      ) : (
+        <p className="text-lg text-gray-500 italic">
+          {filtro === "concluidos"
+            ? "Sem tarefas concluídas"
+            : filtro === "ativos"
+            ? "Sem tarefas ativas"
+            : "Nenhuma tarefa disponível"}
+        </p>
       )}
     </div>
   );
