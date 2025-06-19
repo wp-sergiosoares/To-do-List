@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Input } from "@/components/ui/input";
 export default function AddTicket({ onAdd }) {
   const [item, setItem] = useState("");
 
@@ -17,14 +17,14 @@ export default function AddTicket({ onAdd }) {
         className="flex gap-2 items-center justify-between"
       >
         <div className="relative flex items-center justify-between w-full">
-          <input
+          <Input
             type="text"
             placeholder="Adicione uma tarefa..."
             value={item}
             onChange={(e) => setItem(e.target.value)}
-            className="outline-2 outline-[var(--color-primary)] py-3 px-4 flex-1 rounded-full bg-white text-[var(--color-primary)] pr-30"
+            className="border-2 border-[var(--color-primary)] py-6 px-4 flex-1 rounded-full bg-white text-[var(--color-primary)] pr-30"
           />
-          <button className="absolute right-[2px] bg-[var(--color-primary)] text-white py-3 px-4 rounded-full hover:bg-[var(--color-primary-hover)] cursor-pointer text-sm tracking-wider transition">
+          <button className="absolute right-[3px] bg-[var(--color-primary)] text-white py-3 px-4 rounded-full hover:bg-[var(--color-primary-hover)] cursor-pointer text-sm tracking-wider transition">
             Adicionar
           </button>
         </div>
