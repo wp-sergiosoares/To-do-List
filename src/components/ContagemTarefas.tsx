@@ -16,7 +16,7 @@ export default function ContagemTarefas({
 
   return (
     <>
-      <div className="px-4">
+      <div className="px-4 my-2">
         <div className="flex items-center justify-between">
           {nrConcluidas || nrPendentes ? (
             <div className="flex-1 flex gap-4 items-center">

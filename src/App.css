@@ -31,11 +31,11 @@ body {
 
 
 .btn-filter {
-  @apply tracking-wider rounded-full text-gray-700 px-3 py-1 border-1 border-gray-400 text-sm cursor-pointer  dark:bg-gray-800 hover:bg-[var(--color-secondary-light)] transition dark:hover:bg-gray-700;
+  @apply tracking-wider rounded-full text-gray-700 dark:text-gray-300 px-3 py-1 border-1 border-gray-400 dark:border-gray-600 text-sm cursor-pointer  dark:bg-gray-800 hover:bg-[var(--color-secondary-light)] transition dark:hover:bg-gray-700;
 }
 
 .input-adicionar {
-  @apply focus-visible:outline-2 focus-visible:outline-[var(--color-primary)] active:bg-[var(--color-primary)] border-1 border-[var(--color-primary)] py-3 px-5 flex-1 rounded-full bg-white dark:bg-gray-900 text-[var(--color-primary)] dark:text-gray-100 pr-30 text-xl font-[Nunito];
+  @apply focus-visible:outline-2 focus-visible:outline-[var(--color-primary)] active:bg-[var(--color-primary)] border-1 border-[var(--color-primary)] py-3 px-5 flex-1 rounded-full bg-white dark:bg-gray-900 text-[var(--color-primary)] dark:text-gray-100 pr-30;
 }
 
 .item {
