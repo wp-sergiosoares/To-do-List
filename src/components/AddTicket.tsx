@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type AddTicketProps = {
   onAdd: (item: string) => void;
@@ -6,6 +6,7 @@ type AddTicketProps = {
 
 export default function AddTicket({ onAdd }: AddTicketProps) {
   const [item, setItem] = useState("");
+  const inputRef = useRef(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -13,6 +14,12 @@ export default function AddTicket({ onAdd }: AddTicketProps) {
     onAdd(item.trim());
     setItem("");
   };
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus(); // 3. Dá foco no input ao montar
+    }
+  }, []); // 2. Corre apenas uma vez (montagem)
 
   return (
     <div>
@@ -25,6 +32,7 @@ export default function AddTicket({ onAdd }: AddTicketProps) {
             type="text"
             placeholder="Adicione uma tarefa..."
             value={item}
+            ref={inputRef}
             onChange={(e) => setItem(e.target.value)}
             className="focus-visible:outline-2 active:bg-[var(--color-primary)] border-1 border-[var(--color-primary)] py-3 px-3 flex-1 rounded-full bg-white dark:bg-gray-900 text-[var(--color-primary)] dark:text-gray-100 pr-30"
           />
