@@ -18,8 +18,6 @@ function App() {
   const [nrPendentes, setNrPendentes] = useState("");
   const [filtro, setFiltro] = useState("todos");
 
-  console.log(items);
-
   // Atualiza o localStorage sempre que 'todos' mudar
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(items));
@@ -30,11 +28,13 @@ function App() {
     setNrPendentes(filtraPendentes.length);
   }, [items]);
 
-  const itensFiltrados = items.filter((item) => {
-    if (filtro === "todos") return true; // mostra tudo
-    if (filtro === "concluidos") return item.bought;
-    if (filtro === "pendentes") return !item.bought;
-  });
+  const itensFiltrados = [...items]
+    .sort((a, b) => a.bought - b.bought)
+    .filter((item) => {
+      if (filtro === "todos") return true;
+      if (filtro === "concluidos") return item.bought;
+      if (filtro === "pendentes") return !item.bought;
+    });
 
   const addItem = (item) => {
     const newItem = {
@@ -60,15 +60,13 @@ function App() {
 
   return (
     <>
-      <div className="mt-10">
+      <div className="mt-10 ">
         <div className="container max-w-2xl mx-auto w-full">
           <Header />
-
           <div className="space-y-4 p-4">
             <AddTicket onAdd={addItem} />
             <Filters setFiltro={setFiltro} />
           </div>
-
           <div>
             <div className="p-4 space-y-4">
               <TicketList
@@ -83,15 +81,17 @@ function App() {
             nrConcluidas={nrConcluidas}
             nrPendentes={nrPendentes}
           />
-          <div className="text-center italic text-gray-500 text-sm">
-            Desenvolvido por{" "}
-            <a
-              href="https://portfolio-two-peach-25.vercel.app/"
-              target="_blank"
-              className="underline hover:text-black"
-            >
-              Sérgio Soares
-            </a>
+          <div>
+            <div className="text-center italic text-gray-500 text-sm">
+              Desenvolvido por{" "}
+              <a
+                href="https://portfolio-two-peach-25.vercel.app/"
+                target="_blank"
+                className="underline hover:text-black"
+              >
+                Sérgio Soares
+              </a>
+            </div>
           </div>
         </div>
       </div>

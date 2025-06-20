@@ -1,16 +1,16 @@
 import { Trash2 } from "lucide-react";
 
 type Item = {
-  id: string | number,
-  item: string,
-  bought: boolean,
+  id: string | number;
+  item: string;
+  bought: boolean;
 };
 
 type TicketListProps = {
-  items: Item[],
-  onRemove: (id: string | number) => void,
-  onToggle: (id: string | number) => void,
-  filtro: "todos" | "concluidos" | "ativos",
+  items: Item[];
+  onRemove: (id: string | number) => void;
+  onToggle: (id: string | number) => void;
+  filtro: "todos" | "concluidos" | "ativos";
 };
 
 export default function TicketList({
@@ -19,7 +19,6 @@ export default function TicketList({
   onToggle,
   filtro,
 }: TicketListProps) {
-  console.log(items);
   return (
     <div>
       {items.length > 0 ? (
@@ -27,13 +26,13 @@ export default function TicketList({
           {items.map((item) => (
             <div
               key={item.id}
-              className="border-1 border-gray-200 flex gap-2 items-center justify-between bg-white rounded-lg py-3 px-4 shadow-xs"
+              className="border-1 border-gray-200 dark:border-gray-700 flex gap-2 items-center justify-between bg-white dark:bg-gray-900 rounded-lg py-3 px-4 shadow-xs"
             >
               <div
                 className={
                   item.bought
-                    ? "flex-1 cursor-pointer line-through decoration-1 text-[var(--color-text-secondary)] text-lg"
-                    : "flex-1 hover:line-through cursor-pointer hover:text-[var(--color-text-secondary)] text-lg text-[var(--color-text-primary)]"
+                    ? "flex-1 cursor-pointer line-through decoration-1 text-[var(--color-text-secondary)] dark:text-gray-400 text-lg"
+                    : "flex-1 hover:line-through cursor-pointer hover:text-[var(--color-text-secondary)] dark:text-gray-200 text-lg text-[var(--color-text-primary)]"
                 }
                 onClick={() => onToggle(item.id)}
               >
@@ -42,7 +41,7 @@ export default function TicketList({
               <div className="flex items-center justify-center">
                 <button
                   onClick={() => onRemove(item.id)}
-                  className="text-[var(--color-danger)] cursor-pointer"
+                  className="text-[var(--color-secondary)] cursor-pointer"
                 >
                   <Trash2 size={22} />
                 </button>
