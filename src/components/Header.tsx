@@ -1,9 +1,7 @@
-import { ClockFading } from "lucide-react";
 export default function Header() {
   return (
-    <div className="flex gap-4 items-center justify-center">
-      <ClockFading size={28} className=" text-[var(--color-primary)]" />
-      <h1 className="text-3xl text-[var(--color-primary)] font-mono font-bold tracking-tighter">
+    <div className="text-center">
+      <h1 className="text-4xl text-[var(--color-primary)] font-bold tracking-tighter font-[Nunito]">
         Lista de Tarefas
       </h1>
     </div>

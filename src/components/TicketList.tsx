@@ -18,16 +18,14 @@ export default function TicketList({
   onRemove,
   onToggle,
   filtro,
+  diasDesde,
 }: TicketListProps) {
   return (
     <div>
       {items.length > 0 ? (
-        <ul className="space-y-2">
+        <ul className="space-y-1">
           {items.map((item) => (
-            <div
-              key={item.id}
-              className="border-1 border-gray-200 dark:border-gray-700 flex gap-2 items-center justify-between bg-white dark:bg-gray-900 rounded-lg py-3 px-4 shadow-xs"
-            >
+            <div key={item.id} className="item">
               <div
                 className={
                   item.bought
@@ -36,7 +34,10 @@ export default function TicketList({
                 }
                 onClick={() => onToggle(item.id)}
               >
-                {item.item}
+                {item.item}{" "}
+                {/* <span className="text-gray-300 text-sm italic tracking-wide">
+                  {diasDesde(item.id)}
+                </span> */}
               </div>
               <div className="flex items-center justify-center">
                 <button

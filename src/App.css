@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 @import "tailwindcss";
+
+
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -27,9 +31,13 @@ body {
 
 
 .btn-filter {
-  @apply tracking-wider rounded-full text-gray-500 px-2 py-1 text-sm cursor-pointer bg-gray-200 dark:bg-gray-800 hover:bg-[var(--color-secondary-light)] transition dark:hover:bg-gray-700;
+  @apply tracking-wider rounded-full text-gray-700 px-3 py-1 border-1 border-gray-400 text-sm cursor-pointer  dark:bg-gray-800 hover:bg-[var(--color-secondary-light)] transition dark:hover:bg-gray-700;
 }
 
 .input-adicionar {
-  @apply focus-visible:outline-2 focus-visible:outline-[var(--color-primary)] active:bg-[var(--color-primary)] border-1 border-[var(--color-primary)] py-3 px-3 flex-1 rounded-full bg-white dark:bg-gray-900 text-[var(--color-primary)] dark:text-gray-100 pr-30;
+  @apply focus-visible:outline-2 focus-visible:outline-[var(--color-primary)] active:bg-[var(--color-primary)] border-1 border-[var(--color-primary)] py-3 px-5 flex-1 rounded-full bg-white dark:bg-gray-900 text-[var(--color-primary)] dark:text-gray-100 pr-30 text-xl font-[Nunito];
+}
+
+.item {
+  @apply border-1 border-gray-200 dark:border-gray-700 flex gap-2 items-center justify-between bg-white dark:bg-gray-900 rounded-lg py-2 px-4 shadow-xs;
 }

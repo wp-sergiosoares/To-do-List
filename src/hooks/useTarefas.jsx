@@ -49,6 +49,13 @@ export default function useTarefas() {
     );
   };
 
+  function diasDesde(timestamp) {
+    const agora = Date.now();
+    const diffMs = agora - timestamp;
+    const msPorDia = 1000 * 60 * 60 * 24;
+    return Math.floor(diffMs / msPorDia);
+  }
+
   return {
     marcaConcluido,
     removeItem,
@@ -60,5 +67,6 @@ export default function useTarefas() {
     setNrPendentes,
     filtro,
     setFiltro,
+    diasDesde,
   };
 }
