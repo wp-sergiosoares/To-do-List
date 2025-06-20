@@ -6,6 +6,7 @@ import TicketList from "./components/TicketList";
 import Filters from "./components/Filters";
 import Header from "./components/Header";
 import ContagemTarefas from "./components/ContagemTarefas";
+import Creditos from "./components/Creditos";
 
 // id, item, bought
 
@@ -81,18 +82,7 @@ function App() {
             nrConcluidas={nrConcluidas}
             nrPendentes={nrPendentes}
           />
-          <div>
-            <div className="text-center italic text-gray-500 text-sm">
-              Desenvolvido por{" "}
-              <a
-                href="https://portfolio-two-peach-25.vercel.app/"
-                target="_blank"
-                className="underline hover:text-black"
-              >
-                Sérgio Soares
-              </a>
-            </div>
-          </div>
+          <Creditos />
         </div>
       </div>
     </>
