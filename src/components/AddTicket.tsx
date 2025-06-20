@@ -34,7 +34,7 @@ export default function AddTicket({ onAdd }: AddTicketProps) {
             value={item}
             ref={inputRef}
             onChange={(e) => setItem(e.target.value)}
-            className="focus-visible:outline-2 active:bg-[var(--color-primary)] border-1 border-[var(--color-primary)] py-3 px-3 flex-1 rounded-full bg-white dark:bg-gray-900 text-[var(--color-primary)] dark:text-gray-100 pr-30"
+            className="input-adicionar"
           />
           <button className="absolute right-[3px] bg-[var(--color-primary)] text-white py-3 px-4 rounded-full hover:bg-[var(--color-primary-hover)] cursor-pointer text-sm tracking-wider transition">
             Adicionar
