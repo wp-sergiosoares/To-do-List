@@ -1,3 +1,5 @@
+import { Star } from "lucide-react";
+
 type FiltersProps = {
   setFiltro: (
     filtro: "todos" | "concluidos" | "pendentes" | "destaque"
@@ -50,11 +52,14 @@ export default function Filters({ setFiltro, filtro }: FiltersProps) {
             onClick={() => setFiltro("destaque")}
             className={
               filtro === "destaque"
-                ? "btn-filter bg-[var(--color-primary-light)]! dark:bg-[var(--color-primary)]! dark:border-0! dark:text-white!"
-                : "btn-filter"
+                ? "btn-filter bg-[var(--color-primary-light)]! dark:bg-[var(--color-primary)]! dark:border-0! dark:text-white! p-2!"
+                : "btn-filter p-2!"
             }
           >
-            Destaque
+            <Star
+              size={18}
+              className="fill-[var(--color-primary)] text-[var(--color-primary)]"
+            />
           </button>
         </div>
       </div>
