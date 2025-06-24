@@ -13,7 +13,7 @@ export default function Filters({ setFiltro, filtro }: FiltersProps) {
           <button
             className={
               filtro === "todos"
-                ? "btn-filter bg-[var(--color-primary-light)]!"
+                ? "btn-filter bg-[var(--color-primary-light)]! dark:bg-[var(--color-primary)]! dark:border-0! dark:text-white!"
                 : "btn-filter"
             }
             onClick={() => setFiltro("todos")}
@@ -25,7 +25,7 @@ export default function Filters({ setFiltro, filtro }: FiltersProps) {
           <button
             className={
               filtro === "concluidos"
-                ? "btn-filter bg-[var(--color-primary-light)]!"
+                ? "btn-filter bg-[var(--color-primary-light)]! dark:bg-[var(--color-primary)]! dark:border-0! dark:text-white!"
                 : "btn-filter"
             }
             onClick={() => setFiltro("concluidos")}
@@ -38,7 +38,7 @@ export default function Filters({ setFiltro, filtro }: FiltersProps) {
             onClick={() => setFiltro("pendentes")}
             className={
               filtro === "pendentes"
-                ? "btn-filter bg-[var(--color-primary-light)]!"
+                ? "btn-filter bg-[var(--color-primary-light)]! dark:bg-[var(--color-primary)]! dark:border-0! dark:text-white!"
                 : "btn-filter"
             }
           >
@@ -50,7 +50,7 @@ export default function Filters({ setFiltro, filtro }: FiltersProps) {
             onClick={() => setFiltro("destaque")}
             className={
               filtro === "destaque"
-                ? "btn-filter bg-[var(--color-primary-light)]!"
+                ? "btn-filter bg-[var(--color-primary-light)]! dark:bg-[var(--color-primary)]! dark:border-0! dark:text-white!"
                 : "btn-filter"
             }
           >

@@ -28,14 +28,7 @@ export default function TicketList({
       {items.length > 0 ? (
         <ul className="space-y-1">
           {items.map((item) => (
-            <div
-              key={item.id}
-              className={
-                item.emDestaque
-                  ? "item"
-                  : "item border-[var(--color-primary-light)]!"
-              }
-            >
+            <div key={item.id} className="item">
               <div
                 className={
                   item.bought
