@@ -1,4 +1,7 @@
 import { Trash2, ArrowUp, ArrowDown, Star } from "lucide-react";
+import BtnFavorite from "./BtnFavorite";
+import BtnRemove from "./BtnRemove";
+import TicketItem from "./TicketItem";
 
 type Item = {
   id: string | number;
@@ -29,40 +32,10 @@ export default function TicketList({
         <ul className="space-y-1">
           {items.map((item) => (
             <div key={item.id} className="item">
-              <div
-                className={
-                  item.bought
-                    ? "flex-1 cursor-pointer line-through decoration-1 text-[var(--color-text-secondary)] dark:text-gray-400 text-lg"
-                    : "flex-1 hover:line-through cursor-pointer hover:text-[var(--color-text-secondary)] dark:text-gray-200 text-lg text-[var(--color-text-primary)]"
-                }
-                onClick={() => onToggle(item.id)}
-              >
-                {item.item}{" "}
-              </div>
-              <div className="flex items-center justify-center gap-2">
-                <div className="flex items-center justify-center">
-                  <button onClick={() => isFavorite(item.id)}>
-                    {!item.emDestaque ? (
-                      <Star
-                        size={18}
-                        className=" text-[var(--color-primary)]"
-                      />
-                    ) : (
-                      <Star
-                        size={18}
-                        className="fill-[var(--color-primary)] text-[var(--color-primary)]"
-                      />
-                    )}
-                  </button>
-                </div>
-                <div className="flex items-center justify-center">
-                  <button
-                    onClick={() => onRemove(item.id)}
-                    className="text-[var(--color-secondary)] cursor-pointer"
-                  >
-                    <Trash2 size={22} />
-                  </button>
-                </div>
+              <TicketItem item={item} onToggle={onToggle} />
+              <div className="flex items-center justify-center gap-1">
+                <BtnFavorite item={item} isFavorite={isFavorite} />
+                <BtnRemove item={item} onRemove={onRemove} />
               </div>
             </div>
           ))}
