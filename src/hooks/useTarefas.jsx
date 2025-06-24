@@ -12,7 +12,6 @@ export default function useTarefas() {
   // Atualiza o localStorage sempre que 'todos' mudar
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(items));
-
     const filtraConcluidas = items.filter((item) => item.bought);
     setNrConcluidas(filtraConcluidas.length);
     const filtraPendentes = items.filter((item) => !item.bought);
@@ -20,11 +19,12 @@ export default function useTarefas() {
   }, [items]);
 
   const itensFiltrados = [...items]
-    .sort((a, b) => a.bought - b.bought)
+    // .sort((a, b) => a.bought - b.bought)
     .filter((item) => {
       if (filtro === "todos") return true;
       if (filtro === "concluidos") return item.bought;
       if (filtro === "pendentes") return !item.bought;
+      if (filtro === "destaque") return item.emDestaque;
     });
 
   const addItem = (item) => {
@@ -32,13 +32,22 @@ export default function useTarefas() {
       id: Date.now(),
       item,
       bought: false,
+      emDestaque: false,
     };
     setItems([newItem, ...items]);
+    console.log(items);
   };
 
   const removeItem = (id) => {
-    // rmeove da lista
     setItems(items.filter((item) => item.id !== id));
+  };
+
+  const handleFavorite = (id) => {
+    setItems(
+      items.map((item) =>
+        item.id === id ? { ...item, emDestaque: !item.emDestaque } : item
+      )
+    );
   };
 
   const marcaConcluido = (id) => {
@@ -48,13 +57,6 @@ export default function useTarefas() {
       )
     );
   };
-
-  function diasDesde(timestamp) {
-    const agora = Date.now();
-    const diffMs = agora - timestamp;
-    const msPorDia = 1000 * 60 * 60 * 24;
-    return Math.floor(diffMs / msPorDia);
-  }
 
   return {
     marcaConcluido,
@@ -67,6 +69,6 @@ export default function useTarefas() {
     setNrPendentes,
     filtro,
     setFiltro,
-    diasDesde,
+    handleFavorite,
   };
 }

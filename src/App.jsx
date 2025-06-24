@@ -22,14 +22,8 @@ function App() {
     filtro,
     setFiltro,
     diasDesde,
+    handleFavorite,
   } = useTarefas();
-
-  // console.log(itensFiltrados);
-
-  // const arrayTeste = itensFiltrados.map((item) => {
-  //   const dataEntrada = item.id;
-  //   console.log(Date.now(dataEntrada));
-  // });
 
   return (
     <>
@@ -38,7 +32,7 @@ function App() {
           <div className="space-y-6 px-4 mb-12">
             <Header />
             <AddTicket onAdd={addItem} />
-            <Filters setFiltro={setFiltro} />
+            <Filters setFiltro={setFiltro} filtro={filtro} />
           </div>
 
           <div className="px-4 space-y-4">
@@ -48,6 +42,7 @@ function App() {
               onToggle={marcaConcluido}
               filtro={filtro}
               diasDesde={diasDesde}
+              isFavorite={handleFavorite}
             />
           </div>
 
