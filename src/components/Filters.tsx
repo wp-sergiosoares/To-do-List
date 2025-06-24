@@ -58,7 +58,13 @@ export default function Filters({ setFiltro, filtro }: FiltersProps) {
           >
             <Star
               size={18}
-              className="fill-[var(--color-primary)] text-[var(--color-primary)]"
+              // className="fill-[var(--color-primary)] text-[var(--color-primary)] dark:fill-white dark:text-white"
+
+              className={
+                filtro === "destaque"
+                  ? "dark:fill-white dark:text-white text-[var(--color-primary)] fill-[var(--color-primary)]"
+                  : "text-[var(--color-primary)] fill-[var(--color-primary)] "
+              }
             />
           </button>
         </div>
