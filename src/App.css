@@ -31,7 +31,7 @@ body {
 
 
 .btn-filter {
-  @apply tracking-wider rounded-full text-gray-700 dark:text-gray-300 px-3 py-1 border-1 border-gray-400 dark:border-gray-600 text-sm cursor-pointer  dark:bg-gray-800 hover:bg-[var(--color-primary-light)] transition dark:hover:bg-gray-700;
+  @apply tracking-wider rounded-full text-gray-700 dark:text-gray-300 px-3 py-1 border-1 border-gray-400 dark:border-gray-600 text-xs md:text-sm cursor-pointer  dark:bg-gray-800 hover:bg-[var(--color-primary-light)] transition dark:hover:bg-gray-700;
 }
 
 .input-adicionar {

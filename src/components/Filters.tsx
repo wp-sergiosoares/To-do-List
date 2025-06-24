@@ -2,12 +2,13 @@ type FiltersProps = {
   setFiltro: (
     filtro: "todos" | "concluidos" | "pendentes" | "destaque"
   ) => void;
+  filtro: string;
 };
 
 export default function Filters({ setFiltro, filtro }: FiltersProps) {
   return (
     <div>
-      <div className="flex gap-2 items-center justify-center">
+      <div className="flex gap-1 items-center justify-center">
         <div>
           <button
             className={
@@ -53,7 +54,7 @@ export default function Filters({ setFiltro, filtro }: FiltersProps) {
                 : "btn-filter"
             }
           >
-            Mais importantes
+            Destaque
           </button>
         </div>
       </div>
