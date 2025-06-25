@@ -7,12 +7,12 @@ type Item = {
   emDestaque: boolean;
 };
 
-type TicketItemProps = {
+type ItemProps = {
   item: Item;
   onToggle: (id: string | number) => void;
 };
 
-export default function TicketItem({ item, onToggle }: TicketItemProps) {
+export default function Item({ item, onToggle }: ItemProps) {
   return (
     <div
       className={`flex-1 cursor-pointer text-lg

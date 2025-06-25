@@ -1,6 +1,6 @@
 import { Mail, MessageCircleMore } from "lucide-react";
 
-export default function Creditos() {
+export default function Copyright() {
   return (
     <div className="mt-15 text-center text-gray-300 dark:text-gray-600 text-sm space-y-1">
       <div>

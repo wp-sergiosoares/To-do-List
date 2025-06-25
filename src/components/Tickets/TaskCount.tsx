@@ -1,17 +1,17 @@
 import { Clock12, Check } from "lucide-react";
 
-type ContagemTarefasProps = {
+type TaskCountProps = {
   nrConcluidas: number;
   nrPendentes: number;
 };
 
-import { useDarkMode } from "./../hooks/useDarkMode";
+import { useDarkMode } from "../../hooks/useDarkMode";
 import { Sun, Moon } from "lucide-react";
 
-export default function ContagemTarefas({
+export default function TaskCount({
   nrConcluidas,
   nrPendentes,
-}: ContagemTarefasProps) {
+}: TaskCountProps) {
   const [theme, toggleTheme] = useDarkMode();
 
   return (

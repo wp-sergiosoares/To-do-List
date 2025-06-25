@@ -11,8 +11,6 @@ export default function useTarefas() {
   const [nrPendentes, setNrPendentes] = useState(0);
   const [filtro, setFiltro] = useState("todos");
 
-  console.log(items);
-
   // Atualiza o localStorage sempre que 'items' mudar
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(items));

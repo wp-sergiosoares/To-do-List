@@ -8,12 +8,12 @@ type Item = {
   emDestaque: boolean;
 };
 
-type BtnFavoriteProps = {
+type FavoriteProps = {
   item: Item;
   isFavorite: (id: string | number) => void;
 };
 
-export default function BtnFavorite({ item, isFavorite }: BtnFavoriteProps) {
+export default function Favorite({ item, isFavorite }: FavoriteProps) {
   return (
     <div className="flex items-center justify-center">
       <button

@@ -1,6 +1,6 @@
-import BtnFavorite from "./BtnFavorite";
-import BtnRemove from "./BtnRemove";
-import TicketItem from "./TicketItem";
+import BtnFavorite from "../Buttons/Favorite";
+import BtnRemove from "../Buttons/Delete";
+import Item from "./Item";
 
 type Item = {
   id: string | number;
@@ -9,7 +9,7 @@ type Item = {
   emDestaque: boolean;
 };
 
-type TicketListProps = {
+type ListProps = {
   items: Item[];
   onRemove: (id: string | number) => void;
   onToggle: (id: string | number) => void;
@@ -17,13 +17,13 @@ type TicketListProps = {
   filtro: "todos" | "concluidos" | "ativos" | "destaque";
 };
 
-export default function Tickets({
+export default function List({
   items,
   onRemove,
   onToggle,
   filtro,
   isFavorite,
-}: TicketListProps) {
+}: ListProps) {
   console.log(items);
 
   return (
@@ -32,7 +32,7 @@ export default function Tickets({
         <ul className="space-y-1">
           {items.map((item) => (
             <div key={item.id} className="item">
-              <TicketItem item={item} onToggle={onToggle} />
+              <Item item={item} onToggle={onToggle} />
               <div className="flex items-center justify-center gap-1">
                 <BtnFavorite item={item} isFavorite={isFavorite} />
                 <BtnRemove item={item} onRemove={onRemove} />

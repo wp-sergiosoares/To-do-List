@@ -8,12 +8,12 @@ type Item = {
   emDestaque: boolean;
 };
 
-type BtnRemoveProps = {
+type DeleteProps = {
   item: Item;
   onRemove: (id: string | number) => void;
 };
 
-export default function BtnRemote({ item, onRemove }: BtnRemoveProps) {
+export default function Delete({ item, onRemove }: DeleteProps) {
   return (
     <div className="flex items-center justify-center">
       <button
