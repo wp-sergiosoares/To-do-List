@@ -1,11 +1,12 @@
+import { useContext } from "react";
+import { TarefasContext } from "../context/tarefasContext";
+
 import AddTicket from "../components/Tickets/Add";
 import List from "../components/Tickets/List";
 import Filters from "../components/Tickets/Filters";
 import Header from "../components/Header/Header";
 import TaskCount from "../components/Tickets/TaskCount";
 import Footer from "../components/Footer/Footer";
-
-import useTarefas from "../hooks/useTarefas";
 
 export default function Home() {
   const {
@@ -18,7 +19,7 @@ export default function Home() {
     filtro,
     setFiltro,
     handleFavorite,
-  } = useTarefas();
+  } = useContext(TarefasContext);
 
   return (
     <>
