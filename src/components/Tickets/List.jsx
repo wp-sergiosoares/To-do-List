@@ -32,6 +32,8 @@ export default function List() {
             ? "Sem tarefas concluídas"
             : filtro === "ativos"
             ? "Sem tarefas ativas"
+            : filtro === "destaque"
+            ? "Sem destaques"
             : "Nenhuma tarefa disponível"}
         </p>
       )}
