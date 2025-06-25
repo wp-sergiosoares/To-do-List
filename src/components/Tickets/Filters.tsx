@@ -1,13 +1,10 @@
+import { useContext } from "react";
 import { Star } from "lucide-react";
 
-type FiltersProps = {
-  setFiltro: (
-    filtro: "todos" | "concluidos" | "pendentes" | "destaque"
-  ) => void;
-  filtro: string;
-};
+import { TarefasContext } from "../../context/tarefasContext";
 
-export default function Filters({ setFiltro, filtro }: FiltersProps) {
+export default function Filters() {
+  const { setFiltro, filtro } = useContext(TarefasContext);
   return (
     <div>
       <div className="flex gap-1 items-center justify-center">

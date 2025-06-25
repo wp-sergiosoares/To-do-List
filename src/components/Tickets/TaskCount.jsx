@@ -1,19 +1,13 @@
-import { Clock12, Check } from "lucide-react";
-
-type TaskCountProps = {
-  nrConcluidas: number;
-  nrPendentes: number;
-};
-
+import { useContext } from "react";
 import { useDarkMode } from "../../hooks/useDarkMode";
-import { Sun, Moon } from "lucide-react";
 
-export default function TaskCount({
-  nrConcluidas,
-  nrPendentes,
-}: TaskCountProps) {
+import { Sun, Moon, Clock12, Check } from "lucide-react";
+
+import { TarefasContext } from "../../context/tarefasContext";
+
+export default function TaskCount() {
   const [theme, toggleTheme] = useDarkMode();
-
+  const { nrConcluidas, nrPendentes } = useContext(TarefasContext);
   return (
     <>
       <div className="px-4 my-2">

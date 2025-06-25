@@ -1,17 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 
-type AddTicketProps = {
-  onAdd: (item: string) => void;
-};
+import { TarefasContext } from "../../context/tarefasContext";
 
-export default function AddTicket({ onAdd }: AddTicketProps) {
+export default function AddTicket() {
+  const { addItem } = useContext(TarefasContext);
+
   const [item, setItem] = useState("");
   const inputRef = useRef(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (item.trim() === "") return;
-    onAdd(item.trim());
+    addItem(item.trim());
     setItem("");
   };
 
