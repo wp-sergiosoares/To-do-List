@@ -12,6 +12,14 @@ type ItemProps = {
   onToggle: (id: string | number) => void;
 };
 
+function isYouTubeLink(url) {
+  return url.includes("youtube.com/watch?v=");
+}
+
+function getYouTubeEmbedUrl(url) {
+  return url.replace("watch?v=", "embed/");
+}
+
 export default function Item({ item, onToggle }: ItemProps) {
   return (
     <div
@@ -23,7 +31,18 @@ export default function Item({ item, onToggle }: ItemProps) {
         }`}
       onClick={() => onToggle(item.id)}
     >
-      {item.item}
+      {isYouTubeLink(item.item) ? (
+        <iframe
+          width="560"
+          height="315"
+          src={getYouTubeEmbedUrl(item.item)}
+          title="YouTube video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      ) : (
+        item.item
+      )}
     </div>
   );
 }
