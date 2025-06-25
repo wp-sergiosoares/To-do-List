@@ -1,4 +1,3 @@
-import { Trash2, ArrowUp, ArrowDown, Star } from "lucide-react";
 import BtnFavorite from "./BtnFavorite";
 import BtnRemove from "./BtnRemove";
 import TicketItem from "./TicketItem";
@@ -18,7 +17,7 @@ type TicketListProps = {
   filtro: "todos" | "concluidos" | "ativos" | "destaque";
 };
 
-export default function TicketList({
+export default function Tickets({
   items,
   onRemove,
   onToggle,
@@ -26,6 +25,7 @@ export default function TicketList({
   isFavorite,
 }: TicketListProps) {
   console.log(items);
+
   return (
     <div>
       {items.length > 0 ? (

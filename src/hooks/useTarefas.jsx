@@ -3,29 +3,33 @@ import { useEffect, useState } from "react";
 export default function useTarefas() {
   const [items, setItems] = useState(() => {
     const saved = localStorage.getItem("items");
-    return saved ? JSON.parse(saved) : [];
+    if (!saved) return [];
+    const parsed = JSON.parse(saved);
+    return parsed.sort((a, b) => Number(a.bought) - Number(b.bought));
   });
-  const [nrConcluidas, setNrConcluidas] = useState("");
-  const [nrPendentes, setNrPendentes] = useState("");
+  const [nrConcluidas, setNrConcluidas] = useState(0);
+  const [nrPendentes, setNrPendentes] = useState(0);
   const [filtro, setFiltro] = useState("todos");
 
-  // Atualiza o localStorage sempre que 'todos' mudar
+  console.log(items);
+
+  // Atualiza o localStorage sempre que 'items' mudar
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(items));
-    const filtraConcluidas = items.filter((item) => item.bought);
-    setNrConcluidas(filtraConcluidas.length);
-    const filtraPendentes = items.filter((item) => !item.bought);
-    setNrPendentes(filtraPendentes.length);
+    setNrConcluidas(items.filter((item) => item.bought).length);
+    setNrPendentes(items.filter((item) => !item.bought).length);
   }, [items]);
 
-  const itensFiltrados = [...items]
-    // .sort((a, b) => a.bought - b.bought)
-    .filter((item) => {
-      if (filtro === "todos") return true;
-      if (filtro === "concluidos") return item.bought;
-      if (filtro === "pendentes") return !item.bought;
-      if (filtro === "destaque") return item.emDestaque;
-    });
+  const itensFiltrados = [...items].filter((item) => {
+    if (filtro === "todos") return true;
+    if (filtro === "concluidos") return item.bought;
+    if (filtro === "pendentes") return !item.bought;
+    if (filtro === "destaque") return item.emDestaque;
+  });
+
+  // const porDestaque = itensFiltrados.sort(
+  //   (a, b) => a.emDestaque - b.emDestaque
+  // );
 
   const addItem = (item) => {
     const newItem = {

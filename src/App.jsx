@@ -1,7 +1,7 @@
 import "./App.css";
 
 import AddTicket from "./components/AddTicket";
-import TicketList from "./components/TicketList";
+import Tickets from "./components/Tickets";
 import Filters from "./components/Filters";
 import Header from "./components/Header";
 import ContagemTarefas from "./components/ContagemTarefas";
@@ -21,7 +21,6 @@ function App() {
     nrPendentes,
     filtro,
     setFiltro,
-    diasDesde,
     handleFavorite,
   } = useTarefas();
 
@@ -36,12 +35,11 @@ function App() {
           </div>
 
           <div className="px-4 space-y-4">
-            <TicketList
+            <Tickets
               items={itensFiltrados}
               onRemove={removeItem}
               onToggle={marcaConcluido}
               filtro={filtro}
-              diasDesde={diasDesde}
               isFavorite={handleFavorite}
             />
           </div>

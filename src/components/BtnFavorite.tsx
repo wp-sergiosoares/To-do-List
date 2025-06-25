@@ -20,14 +20,14 @@ export default function BtnFavorite({ item, isFavorite }: BtnFavoriteProps) {
         onClick={() => isFavorite(item.id)}
         className="cursor-pointer p-1"
       >
-        {!item.emDestaque ? (
-          <Star size={18} className=" text-[var(--color-primary)]" />
-        ) : (
-          <Star
-            size={18}
-            className="fill-[var(--color-primary)] text-[var(--color-primary)]"
-          />
-        )}
+        <Star
+          size={18}
+          className={`text-[var(--color-primary)] transition-all duration-500 ${
+            item.emDestaque
+              ? "scale-100 fill-[var(--color-primary)] text-[var(--color-primary)]"
+              : "scale-95 text-[var(--color-primary-light)] dark:opacity-50"
+          }`}
+        />
       </button>
     </div>
   );
