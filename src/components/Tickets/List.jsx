@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { TarefasContext } from "../../context/tarefasContext";
+import { TarefasContext } from "../../context/TarefasContext";
 
 import ItemRoot from "./Item/ItemRoot";
 import ItemContent from "./Item/ItemContent";
@@ -10,11 +10,11 @@ import ItemActions from "./Item/ItemActions";
 import NoContent from "./NoContent";
 
 export default function List() {
-  const { itensFiltrados, removeItem, marcaConcluido, filtro, handleFavorite } =
+  const { itensFiltrados, removeItem, marcaConcluido, handleFavorite } =
     useContext(TarefasContext);
 
   return (
-    <div>
+    <div className="px-4 space-y-4">
       {itensFiltrados.length > 0 ? (
         <ul className="space-y-1">
           {itensFiltrados.map((item) => (
@@ -28,7 +28,7 @@ export default function List() {
           ))}
         </ul>
       ) : (
-        <NoContent filtro={filtro} />
+        <NoContent />
       )}
     </div>
   );

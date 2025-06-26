@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { TarefasProvider } from "./context/tarefasContext";
+import { TarefasProvider } from "./context/TarefasContext";
 
 import Home from "./pages/Home";
 

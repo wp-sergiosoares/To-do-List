@@ -7,21 +7,17 @@ import Footer from "../components/Footer/Footer";
 
 export default function Home() {
   return (
-    <>
-      <div className="mt-7.5">
-        <div className="container max-w-2xl mx-auto w-full">
-          <div className="space-y-6 px-4 mb-12">
-            <Header />
-            <AddTicket />
-            <Filters />
-          </div>
-          <div className="px-4 space-y-4">
-            <List />
-          </div>
-          <TaskCount />
-          <Footer />
+    <div className="mt-7.5">
+      <div className="container max-w-2xl mx-auto w-full">
+        <div className="space-y-6 px-4 mb-12">
+          <Header />
+          <AddTicket />
+          <Filters />
         </div>
+        <List />
+        <TaskCount />
+        <Footer />
       </div>
-    </>
+    </div>
   );
 }

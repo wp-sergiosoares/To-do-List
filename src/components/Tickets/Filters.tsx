@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Star } from "lucide-react";
 
-import { TarefasContext } from "../../context/tarefasContext";
+import { TarefasContext } from "../../context/TarefasContext";
 
 export default function Filters() {
   const { setFiltro, filtro } = useContext(TarefasContext);

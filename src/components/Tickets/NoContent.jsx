@@ -4,7 +4,7 @@
 //   filtro: Filtro;
 // }
 
-export default function NoContent({ filtro }) {
+export default function NoContent() {
   return (
     <p className="text-lg text-gray-500 italic text-center">Sem tarefas.</p>
   );
