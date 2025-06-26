@@ -25,10 +25,6 @@ export default function useTarefas() {
     if (filtro === "destaque") return item.emDestaque;
   });
 
-  // const porDestaque = itensFiltrados.sort(
-  //   (a, b) => a.emDestaque - b.emDestaque
-  // );
-
   const addItem = (item) => {
     const newItem = {
       id: Date.now(),
@@ -37,7 +33,6 @@ export default function useTarefas() {
       emDestaque: false,
     };
     setItems([newItem, ...items]);
-    console.log(items);
   };
 
   const removeItem = (id) => {
