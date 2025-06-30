@@ -4,8 +4,15 @@ export default function useTarefas() {
   const [items, setItems] = useState(() => {
     const saved = localStorage.getItem("items");
     if (!saved) return [];
+
     const parsed = JSON.parse(saved);
-    return parsed.sort((a, b) => Number(a.bought) - Number(b.bought));
+    return parsed.sort((a, b) => {
+      // Primeiro por 'bought' (false antes de true)
+      if (a.bought !== b.bought) return Number(a.bought) - Number(b.bought);
+
+      // Depois por 'id' (mais recente primeiro, se quiseres ao contrário muda para a.id - b.id)
+      return b.id - a.id;
+    });
   });
   const [nrConcluidas, setNrConcluidas] = useState(0);
   const [nrPendentes, setNrPendentes] = useState(0);
