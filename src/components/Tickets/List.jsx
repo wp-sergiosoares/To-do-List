@@ -21,7 +21,10 @@ export default function List() {
             <ItemRoot key={item.id} id={item.id}>
               <ItemContent item={item} onToggle={marcaConcluido} />
               <ItemActions>
-                <ItemBtnFavorite isFavorite={handleFavorite} item={item} />
+                {!item.bought ? (
+                  <ItemBtnFavorite isFavorite={handleFavorite} item={item} />
+                ) : null}
+
                 <ItemBtnDelete onRemove={removeItem} item={item} />
               </ItemActions>
             </ItemRoot>
