@@ -50,9 +50,7 @@ export default function useTarefas() {
   const marcaConcluido = (id) => {
     setItems(
       items.map((item) =>
-        item.id === id
-          ? { ...item, bought: !item.bought, emDestaque: false }
-          : item
+        item.id === id ? { ...item, bought: !item.bought } : item
       )
     );
   };
