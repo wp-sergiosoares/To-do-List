@@ -25,13 +25,17 @@ export default function ItemBtnDelete({ onRemove, item }) {
         <AlertDialogHeader>
           <AlertDialogTitle>Tem a certeza?</AlertDialogTitle>
           <AlertDialogDescription>
-            Esta ação não pode ser desfeita. Esta ação irá remover
-            permanentemente a tarefa da sua lista.
+            Esta ação não pode ser desfeita.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancelar</AlertDialogCancel>
-          <AlertDialogAction onClick={() => onRemove(item.id)}>
+          <AlertDialogCancel className="cursor-pointer">
+            Cancelar
+          </AlertDialogCancel>
+          <AlertDialogAction
+            onClick={() => onRemove(item.id)}
+            className="cursor-pointer"
+          >
             Continuar
           </AlertDialogAction>
         </AlertDialogFooter>
