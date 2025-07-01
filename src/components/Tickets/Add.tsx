@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState, useContext } from "react";
 
 import { TarefasContext } from "../../context/tarefasContext";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export default function AddTicket() {
   const { addItem } = useContext(TarefasContext);
@@ -21,10 +23,27 @@ export default function AddTicket() {
     }
   }, []); // 2. Corre apenas uma vez (montagem)
 
+  useGSAP(() => {
+    gsap.fromTo(
+      ".form",
+      {
+        y: -10,
+        autoAlpha: 0,
+      },
+      {
+        y: 0,
+        delay: 0.5,
+        autoAlpha: 1,
+        duration: 0.5,
+        ease: "power4.out",
+      }
+    );
+  }, []);
+
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex gap-2 items-center justify-between"
+      className="form flex gap-2 items-center justify-between"
     >
       <div className="relative flex items-center justify-between w-full">
         <input

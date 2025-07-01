@@ -28,7 +28,7 @@ export default function List() {
           stagger: 0.05,
           duration: 0.5,
           ease: "back.out(1)",
-          delay: 0.2,
+          delay: 0.5,
         }
       );
     },

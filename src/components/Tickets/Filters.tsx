@@ -2,12 +2,32 @@ import { useContext } from "react";
 import { Star } from "lucide-react";
 
 import { TarefasContext } from "../../context/TarefasContext";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export default function Filters() {
   const { setFiltro, filtro } = useContext(TarefasContext);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      ".filters",
+      {
+        y: -10,
+        autoAlpha: 0,
+      },
+      {
+        y: 0,
+        delay: 0.5,
+        autoAlpha: 1,
+        duration: 0.5,
+        ease: "power4.out",
+      }
+    );
+  }, []);
+
   return (
     <div>
-      <div className="flex gap-1 items-center justify-center">
+      <div className="filters flex gap-1 items-center justify-center">
         <div>
           <button
             className={
